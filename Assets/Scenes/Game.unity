@@ -793,7 +793,6 @@ MonoBehaviour:
   _healthViewer: {fileID: 1564054997}
   _energyViewer: {fileID: 300724352}
   _fillHealthImage: {fileID: 534614174}
-  _fillEnergyImage: {fileID: 1963145050}
 --- !u!1 &863987117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99219ce242d55945a07e6cd6cddc976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _config:
+    <Health>k__BackingField: 100
+    <Damage>k__BackingField: 10
   _maxEnergy: 100
 --- !u!1 &1214123939
 GameObject:

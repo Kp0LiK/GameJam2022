@@ -10,7 +10,6 @@ namespace Client
         [SerializeField] private Slider _healthViewer;
         [SerializeField] private Slider _energyViewer;
         [SerializeField] private Image _fillHealthImage;
-        [SerializeField] private Image _fillEnergyImage;
 
         private PlayerBehaviour _playerBehaviour;
 
@@ -46,7 +45,7 @@ namespace Client
             _energyViewer.DOValue(energy, 0.5f);
             if (energy <= 0)
             {
-                _fillEnergyImage.DOFade(0, 0.5f);
+                //todo HealSystem
             }
         }
     }   

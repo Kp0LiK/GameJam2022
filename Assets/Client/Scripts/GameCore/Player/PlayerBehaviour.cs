@@ -1,50 +1,52 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : MonoBehaviour
+namespace Client
 {
-    [SerializeField] private int _maxHealth;
-    [SerializeField] private float _maxEnergy;
-
-    private int _health;
-    private float _energy;
-
-    public int Health
+    public class PlayerBehaviour : MonoBehaviour
     {
-        get => _health;
-        set
+        [SerializeField] private int _maxHealth;
+        [SerializeField] private float _maxEnergy;
+
+        private int _health;
+        private float _energy;
+
+        public int Health
         {
-            HealthChanged?.Invoke(value);
-            _health = value;
-            if (_health >= _maxHealth)
+            get => _health;
+            set
             {
-                _health = _maxHealth;
+                HealthChanged?.Invoke(value);
+                _health = value;
+                if (_health >= _maxHealth)
+                {
+                    _health = _maxHealth;
+                }
             }
         }
-    }
 
-    public float Energy
-    {
-        get => _energy;
-        set
+        public float Energy
         {
-            EnergyChanged?.Invoke(value);
-            _energy = value;
-            if (_energy >= _maxEnergy)
+            get => _energy;
+            set
             {
-                _energy = _maxEnergy;
+                EnergyChanged?.Invoke(value);
+                _energy = value;
+                if (_energy >= _maxEnergy)
+                {
+                    _energy = _maxEnergy;
+                }
             }
         }
-    }
 
-    public event Action<int> HealthChanged;
-    public event Action<float> EnergyChanged;
+        public event Action<int> HealthChanged;
+        public event Action<float> EnergyChanged;
 
-    private void Start()
-    {
-        _health = 100;
-        _energy = 100;
+        private void Start()
+        {
+            _health = 100;
+            _energy = 100;
+        }
     }
 }
+

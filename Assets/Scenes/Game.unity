@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08988392, g: 0.0730543, b: 0.14573301, a: 1}
+  m_IndirectSpecularColor: {r: 0.08983995, g: 0.073006965, b: 0.14568567, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2601,7 +2601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.5, z: -5}
+  m_FollowOffset: {x: 0, y: 0.4045387, z: -4.003486}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3361,7 +3361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.5, z: -5}
+  m_FollowOffset: {x: 0, y: 0.4045387, z: -4.003486}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3956,7 +3956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 2.5, z: -5}
+  m_FollowOffset: {x: 0, y: 0.4045387, z: -4.003486}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4249,6 +4249,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 6654147663671899199, guid: 259f776fad3ae2e46961768da2a1cc97, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2279230916242515946}
     - target: {fileID: 7469925064384352122, guid: 259f776fad3ae2e46961768da2a1cc97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 7.016709e-15

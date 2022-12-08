@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (direction.magnitude >= 0.1f)
+        /*if (direction.magnitude >= 0.1f)
         {
             var rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationAngle,
@@ -70,8 +70,18 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             var move = Quaternion.Euler(0f, rotationAngle, 0f) * Vector3.forward;
             _characterController.Move(move.normalized * _speed * Time.deltaTime);
-        }
+        }*/
+        direction = (Vector3.right * horizontal + Vector3.forward * vertical).normalized;
 
+        if (direction.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle,
+                ref _smooth, _smoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            _characterController.Move(moveDir.normalized * _speed * Time.deltaTime);
+        }
 
         _velocity.y += _gravity * Time.deltaTime;
 

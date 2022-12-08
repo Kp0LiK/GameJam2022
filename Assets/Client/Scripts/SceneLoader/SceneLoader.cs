@@ -10,7 +10,13 @@ public class SceneLoader : MonoBehaviour
 
     private void Awake()
     {
-        _image.DOFade(0, 0f);
+        _image.DOFade(1, 0f);
+    }
+
+    private async void Start()
+    {
+        await _image.DOFade(0, 0.5f).AsyncWaitForCompletion();
+
     }
 
     public async void LoadSceneAsync(string scene)

@@ -12,7 +12,7 @@ namespace Client
         [SerializeField] private Image _fillHealthImage;
 
         private PlayerBehaviour _playerBehaviour;
-
+        private float maxHealth = 100f;
         [Inject]
         public void Constructor(PlayerBehaviour playerBehaviour)
         {
@@ -33,7 +33,8 @@ namespace Client
 
         private void OnHealthChanged(int health)
         {
-            _healthViewer.DOValue(health, 0.5f);
+            Debug.Log(health);
+            _fillHealthImage.DOFillAmount(health/maxHealth, 0.5f);
             if (health <= 0)
             {
                 _fillHealthImage.DOFade(0, 0.5f);

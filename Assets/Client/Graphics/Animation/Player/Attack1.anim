@@ -176,67 +176,6 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.96594775, y: 0.20417248, z: 0.14099942, w: 0.07333346}
-        inSlope: {x: 0.004500389, y: -0.021800637, z: 0.031876445, w: -0.06136751}
-        outSlope: {x: 0.004500389, y: -0.021800637, z: 0.031876445, w: -0.06136751}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.37500003
-        value: {x: 0.95947576, y: 0.16526239, z: 0.22012481, w: -0.060329963}
-        inSlope: {x: -0.08746075, y: -0.10544835, z: 0.3274671, w: -0.4878899}
-        outSlope: {x: -0.08746075, y: -0.10544835, z: 0.3274671, w: -0.4878899}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 0.75
-        value: {x: 0.93067604, y: 0.1512816, z: 0.29287222, w: -0.15868805}
-        inSlope: {x: 0.01949071, y: -0.0035825355, z: -0.039479595, w: 0.038461607}
-        outSlope: {x: 0.01949071, y: -0.0035825355, z: -0.039479595, w: 0.038461607}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 1.3333334
-        value: {x: 0.9649391, y: 0.1438849, z: 0.21600136, w: -0.039154693}
-        inSlope: {x: 0.025752064, y: -0.029081922, z: -0.048773292, w: 0.25614363}
-        outSlope: {x: 0.025752064, y: -0.029081922, z: -0.048773292, w: 0.25614363}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 1.3750001
-        value: {x: 0.9657962, y: 0.1425016, z: 0.2147225, w: -0.028728867}
-        inSlope: {x: 0.017455088, y: -0.09181492, z: 0.02395577, w: 0.47990805}
-        outSlope: {x: 0.017455088, y: -0.09181492, z: 0.02395577, w: 0.47990805}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      - serializedVersion: 3
-        time: 1.4166667
-        value: {x: 0.9663937, y: 0.13623366, z: 0.21799767, w: 0.0008376353}
-        inSlope: {x: 0.0143408915, y: -0.15043059, z: 0.07860418, w: 0.70959675}
-        outSlope: {x: 0.0143408915, y: -0.15043059, z: 0.07860418, w: 0.70959675}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
         value: {x: -0.5799174, y: 0.6296369, z: 0.34616223, w: -0.3839596}
         inSlope: {x: 0.0017838478, y: -0.0019783974, z: 0.0029904842, w: -0.0032458305}
         outSlope: {x: 0.0017838478, y: -0.0019783974, z: 0.0029904842, w: -0.0032458305}
@@ -5471,6 +5410,49 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Group/Main/DeformationSystem/Root_M/Hip_L/HipPart1_L/HipPart2_L/Knee_L/Ankle_L/Toes_L/ToesEnd_L
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.96594775, y: 0.20417237, z: 0.14099939, w: 0.07333344}
+        inSlope: {x: 0, y: 0, z: 0, w: 0}
+        outSlope: {x: 0.00445048, y: -0.02201398, z: 0.03226598, w: -0.06175041}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.37500003
+        value: {x: 0.95947576, y: 0.16526222, z: 0.22012477, w: -0.06033}
+        inSlope: {x: -0.08710225, y: -0.12783208, z: 0.34344193, w: -0.48013523}
+        outSlope: {x: -0.08694331, y: -0.12771289, z: 0.3433625, w: -0.4799863}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 0.75
+        value: {x: 0.930676, y: 0.1512814, z: 0.29287204, w: -0.15868813}
+        inSlope: {x: 0.019232433, y: -0.0037352247, z: -0.039021175, w: 0.03810724}
+        outSlope: {x: 0.019758938, y: -0.0038221474, z: -0.03969669, w: 0.03842264}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      - serializedVersion: 3
+        time: 1.4166667
+        value: {x: 0.9663937, y: 0.13623351, z: 0.21799748, w: 0.0008375775}
+        inSlope: {x: 0.0035762782, y: -0.15011428, z: 0.075727694, w: 0.7090754}
+        outSlope: {x: 0, y: 0, z: 0, w: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
   m_CompressedRotationCurves: []
   m_EulerCurves:
   - curve:
@@ -15075,13 +15057,6 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2416302330
-      attribute: 2
-      script: {fileID: 0}
-      typeID: 4
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
       path: 3024433100
       attribute: 2
       script: {fileID: 0}
@@ -15538,6 +15513,13 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3049885317
+      attribute: 2
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2416302330
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -19533,262 +19515,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalRotation.w
     path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Kobyz2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.96594775
-        inSlope: 0.004500389
-        outSlope: 0.004500389
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.37500003
-        value: 0.95947576
-        inSlope: -0.08746075
-        outSlope: -0.08746075
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.75
-        value: 0.93067604
-        inSlope: 0.01949071
-        outSlope: 0.01949071
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: 0.9649391
-        inSlope: 0.025752064
-        outSlope: 0.025752064
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: 0.9657962
-        inSlope: 0.017455088
-        outSlope: 0.017455088
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.4166667
-        value: 0.9663937
-        inSlope: 0.0143408915
-        outSlope: 0.0143408915
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.x
-    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.20417248
-        inSlope: -0.021800637
-        outSlope: -0.021800637
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.37500003
-        value: 0.16526239
-        inSlope: -0.10544835
-        outSlope: -0.10544835
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.75
-        value: 0.1512816
-        inSlope: -0.0035825355
-        outSlope: -0.0035825355
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: 0.1438849
-        inSlope: -0.029081922
-        outSlope: -0.029081922
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: 0.1425016
-        inSlope: -0.09181492
-        outSlope: -0.09181492
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.4166667
-        value: 0.13623366
-        inSlope: -0.15043059
-        outSlope: -0.15043059
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.y
-    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.14099942
-        inSlope: 0.031876445
-        outSlope: 0.031876445
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.37500003
-        value: 0.22012481
-        inSlope: 0.3274671
-        outSlope: 0.3274671
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.75
-        value: 0.29287222
-        inSlope: -0.039479595
-        outSlope: -0.039479595
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: 0.21600136
-        inSlope: -0.048773292
-        outSlope: -0.048773292
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: 0.2147225
-        inSlope: 0.02395577
-        outSlope: 0.02395577
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.4166667
-        value: 0.21799767
-        inSlope: 0.07860418
-        outSlope: 0.07860418
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.z
-    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.07333346
-        inSlope: -0.06136751
-        outSlope: -0.06136751
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.37500003
-        value: -0.060329963
-        inSlope: -0.4878899
-        outSlope: -0.4878899
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.75
-        value: -0.15868805
-        inSlope: 0.038461607
-        outSlope: 0.038461607
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: -0.039154693
-        inSlope: 0.25614363
-        outSlope: 0.25614363
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: -0.028728867
-        inSlope: 0.47990805
-        outSlope: 0.47990805
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.4166667
-        value: 0.0008376353
-        inSlope: 0.70959675
-        outSlope: 0.70959675
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalRotation.w
-    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -74035,6 +73761,190 @@ AnimationClip:
     path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/Fiddlestick2
     classID: 4
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.96594775
+        inSlope: 0
+        outSlope: 0.00445048
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.37500003
+        value: 0.95947576
+        inSlope: -0.08710225
+        outSlope: -0.08694331
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0.930676
+        inSlope: 0.019232433
+        outSlope: 0.019758938
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.4166667
+        value: 0.9663937
+        inSlope: 0.0035762782
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.x
+    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.20417237
+        inSlope: 0
+        outSlope: -0.02201398
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.37500003
+        value: 0.16526222
+        inSlope: -0.12783208
+        outSlope: -0.12771289
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0.1512814
+        inSlope: -0.0037352247
+        outSlope: -0.0038221474
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.4166667
+        value: 0.13623351
+        inSlope: -0.15011428
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.y
+    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.14099939
+        inSlope: 0
+        outSlope: 0.03226598
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.37500003
+        value: 0.22012477
+        inSlope: 0.34344193
+        outSlope: 0.3433625
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: 0.29287204
+        inSlope: -0.039021175
+        outSlope: -0.03969669
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.4166667
+        value: 0.21799748
+        inSlope: 0.075727694
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.z
+    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.07333344
+        inSlope: 0
+        outSlope: -0.06175041
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.37500003
+        value: -0.06033
+        inSlope: -0.48013523
+        outSlope: -0.4799863
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.75
+        value: -0.15868813
+        inSlope: 0.03810724
+        outSlope: 0.03842264
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.4166667
+        value: 0.0008375775
+        inSlope: 0.7090754
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalRotation.w
+    path: Group/Main/MotionSystem/FKSystem/FKOffsetRoot_M/FKExtraRoot_M/FKXRoot_M/FKOffsetRootPart1_M/FKExtraRootPart1_M/FKRootPart1_M/FKXRootPart1_M/FKOffsetRootPart2_M/FKExtraRootPart2_M/FKRootPart2_M/FKXRootPart2_M/HipSwingerStabilizer/FKOffsetSpine1_M/FKExtraSpine1_M/FKSpine1_M/pasted__Fiddlestick2
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -74583,7 +74493,7 @@ AnimationClip:
         time: 0.37500003
         value: -10.866832
         inSlope: -56.472813
-        outSlope: -56.472824
+        outSlope: -56.472813
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -74592,25 +74502,7 @@ AnimationClip:
         time: 0.75
         value: -22.580845
         inSlope: 4.9353337
-        outSlope: 4.9397864
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: -7.916076
-        inSlope: 30.002245
-        outSlope: 30.018951
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: -6.7010565
-        inSlope: 55.238533
-        outSlope: 55.237595
+        outSlope: 4.9353337
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -74647,7 +74539,7 @@ AnimationClip:
         time: 0.37500003
         value: 155.80664
         inSlope: -35.409176
-        outSlope: -35.409184
+        outSlope: -35.409176
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -74656,25 +74548,7 @@ AnimationClip:
         time: 0.75
         value: 147.42525
         inSlope: 4.9129643
-        outSlope: 4.901393
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: 155.82713
-        inSlope: 2.1706629
-        outSlope: 2.3126175
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: 155.83504
-        inSlope: -9.717389
-        outSlope: -9.717417
+        outSlope: 4.9129643
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -74711,7 +74585,7 @@ AnimationClip:
         time: 0.37500003
         value: 162.78993
         inSlope: 28.801146
-        outSlope: 28.80115
+        outSlope: 28.801146
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
@@ -74720,25 +74594,7 @@ AnimationClip:
         time: 0.75
         value: 168.2115
         inSlope: -1.7149659
-        outSlope: -1.6973091
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3333334
-        value: 164.73557
-        inSlope: -2.6703053
-        outSlope: -2.7927194
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3750001
-        value: 164.64932
-        inSlope: -0.37133718
-        outSlope: -0.37133825
+        outSlope: -1.7149659
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334

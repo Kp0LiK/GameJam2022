@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
+using Client;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class AttackTrigger : MonoBehaviour
+namespace Client
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AttackTrigger : MonoBehaviour
     {
-        
-    }
+        public event UnityAction Entered;
+        public event UnityAction DetectExited;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public PlayerBehaviour PlayerTarget { get; private set; }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.TryGetComponent(out PlayerBehaviour playerBehaviour)) return;
+            PlayerTarget = playerBehaviour;
+            Entered?.Invoke();
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.TryGetComponent(out PlayerBehaviour _)) return;
+            DetectExited?.Invoke();
+            PlayerTarget = null;
+        }
     }
 }

@@ -1,40 +1,41 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float gravity;
-    [SerializeField] private float jumpHeight;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _gravity;
+    [SerializeField] private float _smoothTime;
+    [SerializeField] private Transform _groundCheck;
+    [SerializeField] private float _groundDistance;
+    [SerializeField] private LayerMask _groundMask;
 
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundDistance;
-    [SerializeField] private LayerMask groundMask;
+    private CharacterController _characterController;
+    private Animator _animator;
 
-    [SerializeField] private CharacterController controller;
-    
-    private Vector3 velocity;
-    private bool isGrounded;
-    private void Update()
+    private Vector3 _velocity;
+    private bool _isGrounded;
+    private float _smooth;
+    private static readonly int Speed = Animator.StringToHash("Speed");
+
+    private void Awake()
     {
-        OnMove();
+        _characterController = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
     }
 
-    private void OnMove()
+    private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        Move();
+    }
 
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
+    private void Move()
+    {
+        _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundDistance, _groundMask);
 
-        if (Input.GetKey("left shift") && isGrounded)
+        if (_isGrounded && _velocity.y < 0)
         {
-            speed = 10;
-        }
-        else
-        {
-            speed = 5;
+            _velocity.y = -2f;
         }
 
         var horizontal = Input.GetAxis("Horizontal");
@@ -42,15 +43,56 @@ public class PlayerMovement : MonoBehaviour
 
         var direction = transform.right * horizontal + transform.forward * vertical;
 
-        controller.Move(direction * speed * Time.deltaTime);
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (direction != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Walk();
+        }
+        else
+        {
+            if (direction != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            {
+                Run();
+            }
+            else
+            {
+                if (direction == Vector3.zero)
+                {
+                    Idle();
+                }
+            }
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        if (direction.magnitude >= 0.1f)
+        {
+            var rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, rotationAngle,
+                ref _smooth, _smoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            var move = Quaternion.Euler(0f, rotationAngle, 0f) * Vector3.forward;
+            _characterController.Move(move.normalized * _speed * Time.deltaTime);
+        }
 
-        controller.Move(velocity * Time.deltaTime);
+
+        _velocity.y += _gravity * Time.deltaTime;
+
+        _characterController.Move(_velocity * Time.deltaTime);
+    }
+
+    private void Idle()
+    {
+        _speed = 0f;
+        _animator.SetFloat(Speed, 0f);
+    }
+
+    private void Walk()
+    {
+        _speed = 5f;
+        _animator.SetFloat(Speed, 0.5f);
+    }
+
+    private void Run()
+    {
+        _speed = 7f;
+        _animator.SetFloat(Speed, 1f);
     }
 }

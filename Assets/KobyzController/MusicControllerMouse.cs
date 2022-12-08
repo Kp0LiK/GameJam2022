@@ -49,6 +49,8 @@ public class MusicControllerMouse : MonoBehaviour
         {
             buttonPressed = false;
             anim.SetTrigger("Idle");
+            audio.Stop();
+            ClearValues();
         }
         if (!buttonPressed && Input.GetKeyDown(KeyCode.Q))
         {
@@ -64,6 +66,8 @@ public class MusicControllerMouse : MonoBehaviour
         {
             buttonPressed = false;
             anim.SetTrigger("Idle");
+            audio.Stop();
+            ClearValues();
         }
         if (buttonPressed && index == 0)
         {
@@ -126,20 +130,23 @@ public class MusicControllerMouse : MonoBehaviour
         complete.Play();
         particle2.Play(true);
         ClearValues();
+        buttonPressed = false;
+        anim.SetTrigger("Idle");
     }
     private void CastFail()
     {
         Debug.Log("Fail");
         audio.Stop();
+        index = 0;
         ClearValues();       
     }
     private void ClearValues()
     {
         particle1.Stop(false);
-        buttonPressed = false;
-        anim.SetTrigger("Idle");
         anim.speed = 1f;
         scaleImg.fillAmount = 0f;
+        currentAction = null;
+        holdTimer = 0f;
     }
     
     [System.Serializable]

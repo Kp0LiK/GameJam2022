@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
     private void Walk()
     {
         _speed = 5f;
-        _animator.SetFloat(Speed, 0.5f);
+        _animator.SetFloat(Speed, 0.95f);
     }
 
     private void Run()

@@ -4411,6 +4411,10 @@ PrefabInstance:
       propertyPath: scaleImg
       value: 
       objectReference: {fileID: 254235740}
+    - target: {fileID: 6036568182067156689, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: particle1
+      value: 
+      objectReference: {fileID: 6036568182067156694, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
     - target: {fileID: 7332510695710287073, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
       propertyPath: _groundCheck
       value: 
@@ -4419,6 +4423,50 @@ PrefabInstance:
       propertyPath: scaleImg
       value: 
       objectReference: {fileID: 254235740}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: atackType.actions.Array.data[0].name
+      value: Atack1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: atackType.actions.Array.data[1].name
+      value: Atack2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[0].name
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 820ab0de1e9f6e44390ae8358548d06c, type: 3}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].name
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].particle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].endParticle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].notes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].notes.Array.data[0].key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924566945738963987, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
+      propertyPath: shieldType.actions.Array.data[1].notes.Array.data[0].duration
+      value: 2.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc0c5993ab716554c9be95bb5c2bf726, type: 3}
 --- !u!1001 &7047215778674108134

@@ -14,8 +14,7 @@ public class MusicControllerMouse : MonoBehaviour
     public MusicActionTypeM shieldType;
     public MusicActionTypeM atackType;
     [SerializeField] Client.PlayerBehaviour playerBehaviour;
-    [SerializeField] ParticleSystem particle1;
-    [SerializeField] ParticleSystem particle2;
+    [SerializeField] ParticleSystem [] particles;    
     [SerializeField] Animator anim;
     float kobyzForwardTime = 0.708f;
     float kobyzBackTime = 0.667f;
@@ -78,7 +77,7 @@ public class MusicControllerMouse : MonoBehaviour
                     currentAction = action;
                     audio.clip = currentAction.clip;
                     audio.Play();
-                    particle1.Play(false);
+                    particles[action.particle].Play(false);
                     anim.speed = kobyzForwardTime / currentAction.notes[index].duration;
                     anim.SetTrigger("KobyzF");
                     break;
@@ -129,10 +128,13 @@ public class MusicControllerMouse : MonoBehaviour
     private void CastSuccess()
     {
         complete.Play();
-        particle2.Play(true);
+        particles[currentAction.endParticle].Play(true);
+        if (currentAction.name == "Heal")
+            playerBehaviour.Health += 20;
         ClearValues();
         buttonPressed = false;
         anim.SetTrigger("Idle");
+        
     }
     private void CastFail()
     {
@@ -143,7 +145,7 @@ public class MusicControllerMouse : MonoBehaviour
     }
     private void ClearValues()
     {
-        particle1.Stop(false);
+        particles[currentAction.particle].Stop(false);
         anim.speed = 1f;
         scaleImg.fillAmount = 0f;
         currentAction = null;
@@ -158,8 +160,11 @@ public class MusicControllerMouse : MonoBehaviour
     [System.Serializable]
     public class MusicActionM
     {
+        public string name;
         public AudioClip clip;
         public NoteM[] notes;
+        public int particle;
+        public int endParticle;
     }
     [System.Serializable]
     public class MusicActionTypeM

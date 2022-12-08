@@ -10,9 +10,11 @@ namespace Client
         [SerializeField] private Slider _healthViewer;
         [SerializeField] private Slider _energyViewer;
         [SerializeField] private Image _fillHealthImage;
+        [SerializeField] private Image _fillEnergyImage;
 
         private PlayerBehaviour _playerBehaviour;
         private float maxHealth = 100f;
+        private float maxEnergy = 100f;
         [Inject]
         public void Constructor(PlayerBehaviour playerBehaviour)
         {
@@ -43,7 +45,8 @@ namespace Client
 
         private void OnEnergyChanged(float energy)
         {
-            _energyViewer.DOValue(energy, 0.5f);
+            _fillEnergyImage.DOFillAmount(energy / maxEnergy, 0.5f);
+            //_energyViewer.DOValue(energy, 0.5f);
             if (energy <= 0)
             {
                 //todo HealSystem

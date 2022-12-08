@@ -13,7 +13,7 @@ public class MusicControllerMouse : MonoBehaviour
     public MusicActionM atack2;
     public MusicActionTypeM shieldType;
     public MusicActionTypeM atackType;
-
+    [SerializeField] Client.PlayerBehaviour playerBehaviour;
     [SerializeField] ParticleSystem particle1;
     [SerializeField] ParticleSystem particle2;
     [SerializeField] Animator anim;
@@ -90,6 +90,7 @@ public class MusicControllerMouse : MonoBehaviour
             if (buttonPressed && Input.GetMouseButton(currentAction.notes[index].key))
             {
                 holdTimer += Time.deltaTime;
+                playerBehaviour.Energy -= Time.deltaTime * 3f;
                 scaleImg.fillAmount = holdTimer / currentAction.notes[index].duration;
                 if (holdTimer > currentAction.notes[index].duration)
                 {

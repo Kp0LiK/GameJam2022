@@ -3734,7 +3734,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.59
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 60
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -3782,7 +3782,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3256085616674436238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28114b4f82374e63995d9183e3dfa085, type: 3}
   m_Name: 
@@ -9658,6 +9658,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6036568182764441090}
     - target: {fileID: 1511702133868156828, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
+      propertyPath: playerBehaviour
+      value: 
+      objectReference: {fileID: 4645441011732619672}
+    - target: {fileID: 1511702133868156828, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
       propertyPath: atackType.actions.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -9750,16 +9754,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4388469257266412889, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388469257266412889, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+      value: 0.27394092
       objectReference: {fileID: 0}
     - target: {fileID: 4388469257266412889, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 1
+      value: 0.27394092
       objectReference: {fileID: 0}
     - target: {fileID: 4388469257266412889, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
+      value: 0.7169812
       objectReference: {fileID: 0}
     - target: {fileID: 4388469257266412889, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
@@ -9797,6 +9805,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 2279230916242515943}
+    - target: {fileID: 4388469257266412894, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4388469257266412895, guid: 22753d5a4439f524783cbe2148c2e9a0, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -1246,6 +1246,7 @@ MonoBehaviour:
   _exit: {fileID: 1303031805}
   _selector: {fileID: 1825083176}
   _selectSound: {fileID: 8300000, guid: 030515f205b54fc478961cbe39c4e75e, type: 3}
+  videoClip: {fileID: 32900000, guid: 03d4ef92771595340bb582bc93ccc651, type: 3}
 --- !u!82 &555318192
 AudioSource:
   m_ObjectHideFlags: 0

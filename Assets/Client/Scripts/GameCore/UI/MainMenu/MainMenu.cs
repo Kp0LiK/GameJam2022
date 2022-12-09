@@ -16,7 +16,7 @@ namespace Client
         [SerializeField] private Image _selector;
 
         [SerializeField] private AudioClip _selectSound;
-
+        [SerializeField] UnityEngine.Video.VideoClip videoClip;
         private AudioSource _audioSource;
         private SceneLoader _sceneLoader;
 
@@ -66,9 +66,14 @@ namespace Client
 
         private void OnStartButtonPressed()
         {
+            transform.parent.gameObject.SetActive(false);
+            VideoPlayerController.Instance.PlayClip(videoClip, VideoFinished, Camera.main);
+            
+        }
+        private void VideoFinished()
+        {
             _sceneLoader.LoadSceneAsync("Game");
         }
-
         private void OnButtonSelectEnter(Transform context)
         {
             _selector.transform.DOMove(context.transform.position, 0.2f).OnStart(() =>

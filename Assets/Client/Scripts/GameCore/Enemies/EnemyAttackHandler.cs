@@ -8,6 +8,8 @@ namespace Client
     {
         private SpiderBehaviour _spiderBehaviour;
         private Coroutine _attackRoutine;
+        
+        public EnemyState State { get; private set; }
 
 
         private void Awake()
@@ -25,6 +27,9 @@ namespace Client
 
         private void OnTriggerExit(Collider other)
         {
+            _spiderBehaviour.Attack();
+
+
             StopCoroutine(_attackRoutine);
         }
 
@@ -33,6 +38,7 @@ namespace Client
             while (!ReferenceEquals(_spiderBehaviour.Target, null))
             {
                 yield return new WaitForSeconds(1.5f);
+                _spiderBehaviour.Animator.SetTrigger("isAttack");
                 _spiderBehaviour.Target.ApplyDamage(_spiderBehaviour.Data.Damage);
             }
         }

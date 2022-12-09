@@ -39,6 +39,8 @@ namespace Client
         private Rigidbody _rigidbody;
         private AudioSource _audioSource;
 
+        public Animator Animator => _animator;
+
 
         private static readonly int Walk = Animator.StringToHash("Walk");
         private static readonly int IsAttack = Animator.StringToHash("isAttack");
@@ -111,22 +113,17 @@ namespace Client
             _animator.SetFloat(Walk, 0);
         }
 
-        private async void Attack()
+        public async void Attack()
         {
-            _animator.SetTrigger(IsAttack);
-            
-            if (State == EnemyState.Idle)
-            {
-                _animator.SetFloat(Walk, 0);
-                return;
-            }
-
-            
-            await Task.Yield();
+            // _animator.SetTrigger(IsAttack);
+            //
+            // if (State == EnemyState.Idle)
+            // {
+            //     _animator.SetFloat(Walk, 0);
+            //     return;
+            // }
             if (!ReferenceEquals(_target, null))
             {
-                await UniTask.Delay(1500);
-                _audioSource.PlayOneShot(audioData.OnAttack);
                 _target.ApplyDamage(_data.Damage);
 
                 if (Vector3.Distance(transform.position, _target.transform.position) > _attackDistance)
@@ -150,9 +147,9 @@ namespace Client
                 var direction = _target.transform.position;
                 _meshAgent.SetDestination(direction);
 
-                var qTo = Quaternion.LookRotation(direction);
-                qTo = Quaternion.Slerp(transform.rotation, qTo, 30.0f * Time.deltaTime);
-                _rigidbody.MoveRotation(qTo);
+                // var qTo = Quaternion.LookRotation(direction);
+                // qTo = Quaternion.Slerp(transform.rotation, qTo, 30.0f * Time.deltaTime);
+                // _rigidbody.MoveRotation(qTo);
             }
 
             if (Vector3.Distance(transform.position, _target.transform.position) < _attackDistance)
@@ -180,6 +177,7 @@ namespace Client
             {
                 State = EnemyState.Die;
                 _animator.SetBool(IsDead, true);
+                Destroy(gameObject, 2f);
             }
 
             HealthChanged?.Invoke(_data.Health);

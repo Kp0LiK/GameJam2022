@@ -22,7 +22,7 @@ public class SceneLoader : MonoBehaviour
     public async void LoadSceneAsync(string scene)
     {
         await _image.DOFade(1, 0.5f).AsyncWaitForCompletion();
-        await SceneManager.LoadSceneAsync(scene);
+        await SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
         await _image.DOFade(0, 0.5f).AsyncWaitForCompletion();
     }
 }

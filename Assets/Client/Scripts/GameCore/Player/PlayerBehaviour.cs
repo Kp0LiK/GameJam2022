@@ -8,10 +8,21 @@ namespace Client
     {
         [SerializeField] private EntityData data;
         [SerializeField] private float _maxEnergy;
+        [SerializeField] private EnemyAudioData audioData;
+
 
         private int _health;
         private float _energy;
+
+        private Animator _animator;
+        
+        private AudioSource _audioSource;
         public EntityData Data => data;
+
+        public Animator Animator => _animator;
+        public AudioSource AudioSource => _audioSource;
+
+        public EnemyAudioData AudioData => audioData;
 
 
         public int Health
@@ -45,6 +56,12 @@ namespace Client
         public event Action<int> HealthChanged;
         public event Action<float> EnergyChanged;
 
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+            _audioSource = GetComponent<AudioSource>();
+        }
+
         private void Start()
         {
             _health = 100;
@@ -66,11 +83,23 @@ namespace Client
             else
             {
                 data.Health -= damage;
+                _audioSource.PlayOneShot(audioData.OnDetect);
+
             }
 
             UpdateHealth();
         }
 
         private void UpdateHealth() => HealthChanged?.Invoke(Mathf.RoundToInt( data.Health));
+    }
+    
+    [Serializable]
+    public class PlayerAudioData
+    {
+        public AudioClip OnAttack;
+        public AudioClip OnDetect;
+        public AudioClip OnUnDetect;
+        public AudioClip OnMove;
+        public AudioClip OnDie;
     }
 }

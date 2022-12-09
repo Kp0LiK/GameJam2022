@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Client;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,8 +20,11 @@ public class MusicController : MonoBehaviour
     [SerializeField] ParticleSystem particle2;
     [SerializeField] Animator anim;
     float kobyzForwardTime = 0.708f;
+
     float kobyzBackTime = 0.667f;
     // Start is called before the first frame update
+
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -30,26 +35,29 @@ public class MusicController : MonoBehaviour
     float threshhold = 0.3f;
     int index;
     MusicAction currentAction;
+
     MusicActionType currentActionType;
+
     // Update is called once per frame
     void Update()
     {
-        
         if (!buttonPressed && Input.GetKeyDown(KeyCode.E))
         {
             buttonPressed = true;
             index = 0;
-            holdTimer = 0f; 
+            holdTimer = 0f;
             scaleImg.fillAmount = 0f;
             //currentAction = atack;
             currentActionType = atackType;
             anim.SetTrigger("KobyzReady");
         }
+
         if (buttonPressed && Input.GetKeyUp(KeyCode.E))
         {
             buttonPressed = false;
             anim.SetTrigger("Idle");
         }
+
         if (!buttonPressed && Input.GetKeyDown(KeyCode.Q))
         {
             buttonPressed = true;
@@ -60,14 +68,16 @@ public class MusicController : MonoBehaviour
             currentActionType = shieldType;
             anim.SetTrigger("KobyzReady");
         }
+
         if (buttonPressed && Input.GetKeyUp(KeyCode.Q))
         {
             buttonPressed = false;
             anim.SetTrigger("Idle");
         }
+
         if (buttonPressed && index == 0)
         {
-            foreach(MusicAction action in currentActionType.actions)
+            foreach (MusicAction action in currentActionType.actions)
             {
                 if (Input.GetKeyDown(action.notes[index].key))
                 {
@@ -81,6 +91,7 @@ public class MusicController : MonoBehaviour
                 }
             }
         }
+
         if (buttonPressed && currentAction != null)
         {
             if (buttonPressed && Input.GetKey(currentAction.notes[index].key))
@@ -94,8 +105,8 @@ public class MusicController : MonoBehaviour
                     else
                         CastFail();
                 }
-
             }
+
             if (buttonPressed && Input.GetKeyUp(currentAction.notes[index].key))
             {
                 if (Mathf.Abs(holdTimer - currentAction.notes[index].duration) < threshhold)
@@ -110,7 +121,8 @@ public class MusicController : MonoBehaviour
                     }
                     else
                     {
-                        anim.speed = (index % 2 > 0 ? kobyzBackTime : kobyzForwardTime) / currentAction.notes[index].duration;
+                        anim.speed = (index % 2 > 0 ? kobyzBackTime : kobyzForwardTime) /
+                                     currentAction.notes[index].duration;
                         anim.SetTrigger(index % 2 > 0 ? "KobyzB" : "KobyzF");
                     }
                 }
@@ -119,19 +131,24 @@ public class MusicController : MonoBehaviour
                     CastFail();
                 }
             }
-        } 
+        }
     }
+
     private void CastSuccess()
     {
         complete.Play();
+
+
         particle2.Play(true);
         ClearValues();
     }
+
     private void CastFail()
     {
         audio.Stop();
-        ClearValues();       
+        ClearValues();
     }
+
     private void ClearValues()
     {
         particle1.Stop(false);
@@ -140,18 +157,21 @@ public class MusicController : MonoBehaviour
         anim.speed = 1f;
         scaleImg.fillAmount = 0f;
     }
-    
+
     [System.Serializable]
-    public class Note {
+    public class Note
+    {
         public string key;
         public float duration;
     }
+
     [System.Serializable]
     public class MusicAction
     {
         public AudioClip clip;
         public Note[] notes;
     }
+
     [System.Serializable]
     public class MusicActionType
     {

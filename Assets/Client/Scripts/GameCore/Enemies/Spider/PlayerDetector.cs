@@ -5,25 +5,21 @@ namespace Client
 {
     public class PlayerDetector : MonoBehaviour
     {
-        public event UnityAction Entered;
-        public event UnityAction DetectExited;
-
-        public PlayerBehaviour PlayerTarget { get; private set; }
-    
+        public event UnityAction<PlayerBehaviour> Entered;
+        public event UnityAction<PlayerBehaviour> DetectExited;
+        
         private void OnTriggerEnter(Collider other)
         {
         
             if (!other.TryGetComponent(out PlayerBehaviour playerBehaviour)) return;
-            PlayerTarget = playerBehaviour;
-            Entered?.Invoke();
+            Entered?.Invoke(playerBehaviour);
         }
 
         private void OnTriggerExit(Collider other)
         {
         
-            if (!other.TryGetComponent(out PlayerBehaviour _)) return;
-            DetectExited?.Invoke();
-            PlayerTarget = null;
+            if (!other.TryGetComponent(out PlayerBehaviour player)) return;
+            DetectExited?.Invoke(player);
         }
     }   
 }

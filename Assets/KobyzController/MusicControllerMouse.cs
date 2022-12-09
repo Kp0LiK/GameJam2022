@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Client;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class MusicControllerMouse : MonoBehaviour
@@ -20,6 +22,13 @@ public class MusicControllerMouse : MonoBehaviour
     float kobyzForwardTime = 0.708f;
     float kobyzBackTime = 0.667f;
     // Start is called before the first frame update
+    
+    private void Awake()
+    {
+        _playerBehaviour = GetComponentInParent<PlayerBehaviour>();
+    }
+
+    
     void Start()
     {
         audio = GetComponent<AudioSource>();
@@ -31,6 +40,12 @@ public class MusicControllerMouse : MonoBehaviour
     int index;
     MusicActionM currentAction;
     MusicActionTypeM currentActionType;
+    
+    [Space(30)]
+    [SerializeField] private Projectile _projectilePrefab;
+
+    private PlayerBehaviour _playerBehaviour;
+    
     // Update is called once per frame
     void Update()
     {
@@ -100,7 +115,7 @@ public class MusicControllerMouse : MonoBehaviour
                 }
 
             }
-            if (buttonPressed && Input.GetMouseButtonUp(currentAction.notes[index].key))
+            if (buttonPressed && Mouse.current.wasUpdatedThisFrame)
             {
                 if (Mathf.Abs(holdTimer - currentAction.notes[index].duration) < threshhold)
                 {
@@ -129,6 +144,11 @@ public class MusicControllerMouse : MonoBehaviour
     {
         complete.Play();
         particle2.Play(true);
+        
+        var proj = Instantiate(_projectilePrefab, transform.position * 1.5f, Quaternion.identity);
+        proj.EntityData = _playerBehaviour.Data;
+        proj.Direction = transform.InverseTransformDirection(transform.forward);
+        
         ClearValues();
         buttonPressed = false;
         anim.SetTrigger("Idle");

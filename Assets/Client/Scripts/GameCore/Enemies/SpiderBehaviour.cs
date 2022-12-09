@@ -1,85 +1,169 @@
+using System;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Events;
 
 namespace Client
 {
-    public class SpiderBehaviour : MonoBehaviour
+    public enum EnemyState
+    {
+        Idle,
+        Follow,
+        Attack,
+        Die
+    }
+
+    public class SpiderBehaviour : MonoBehaviour, IDamageable
     {
         [SerializeField] private EntityData _data;
         [SerializeField] private AudioSource _audio;
-        [SerializeField] private PlayerBehaviour _player;
+        [SerializeField] private int _attackDelayInSecond;
+        [SerializeField] private float _attackDistance;
+        [SerializeField] private EnemyAudioData audioData;
+        
+        private PlayerBehaviour _target;
+        public EntityData Data => _data;
+
+        public PlayerBehaviour Target => _target;
+
+        public event UnityAction<float> HealthChanged;
+        public EnemyState State { get; private set; }
 
         private Animator _animator;
         private PlayerDetector _playerDetector;
-        private AttackTrigger _attackDetector;
+
+
+        private NavMeshAgent _meshAgent;
+        private Rigidbody _rigidbody;
+        private AudioSource _audioSource;
+
+
         private static readonly int Walk = Animator.StringToHash("Walk");
         private static readonly int IsAttack = Animator.StringToHash("isAttack");
         private static readonly int IsDead = Animator.StringToHash("isDead");
 
-        public EntityData Data => _data;
-
-        public event UnityAction<float> HealthChanged;
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
+            _rigidbody = GetComponent<Rigidbody>();
+            _meshAgent = GetComponent<NavMeshAgent>();
+            _animator = GetComponentInChildren<Animator>();
             _playerDetector = GetComponentInChildren<PlayerDetector>();
-            _attackDetector = GetComponentInChildren<AttackTrigger>();
+            _audioSource = GetComponent<AudioSource>();
         }
+
+        private void Start()
+        {
+            State = EnemyState.Idle;
+            _meshAgent.stoppingDistance = _attackDistance;
+        }
+
 
         private void OnEnable()
         {
             _playerDetector.Entered += OnEntered;
-            _playerDetector.DetectExited += OnDetectExited;
-
-            _attackDetector.Entered += OnSpiderAttackDetect;
-            _attackDetector.DetectExited += OnAttackDetectExited;
+            _playerDetector.DetectExited += OnDetectExit;
         }
 
         private void OnDisable()
         {
             _playerDetector.Entered -= OnEntered;
-            _playerDetector.DetectExited -= OnDetectExited;
-
-            _attackDetector.Entered -= OnSpiderAttackDetect;
-            _attackDetector.DetectExited -= OnAttackDetectExited;
+            _playerDetector.DetectExited -= OnDetectExit;
         }
 
-        private void OnEntered()
+        private void FixedUpdate()
         {
+            switch (State)
+            {
+                case EnemyState.Idle:
+                    break;
+                case EnemyState.Follow:
+                    FollowToTarget();
+                    break;
+                case EnemyState.Attack:
+                    break;
+                case EnemyState.Die:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void OnEntered(PlayerBehaviour playerBehaviour)
+        {
+            _audioSource.PlayOneShot(audioData.OnDetect);
+            
+            State = EnemyState.Follow;
+            _meshAgent.isStopped = false;
+            _target = playerBehaviour;
             _animator.SetFloat(Walk, 1);
         }
 
-        private void OnDetectExited()
+        private void OnDetectExit(PlayerBehaviour playerBehaviour)
         {
+            _audioSource.PlayOneShot(audioData.OnUnDetect);
+
+            State = EnemyState.Idle;
+            _meshAgent.isStopped = true;
+            _target = null;
             _animator.SetFloat(Walk, 0);
         }
 
-        private async void OnSpiderAttackDetect()
+        private async void Attack()
         {
-            _animator.SetBool(IsAttack, true);
-            while (true)
+            _animator.SetTrigger(IsAttack);
+            
+            if (State == EnemyState.Idle)
             {
-                await Task.Delay(1500);
+                _animator.SetFloat(Walk, 0);
+                return;
+            }
 
-                if (_data.isDied)
-                    return;
+            
+            await Task.Yield();
+            if (!ReferenceEquals(_target, null))
+            {
+                await UniTask.Delay(1500);
+                _audioSource.PlayOneShot(audioData.OnAttack);
+                _target.ApplyDamage(_data.Damage);
 
-                if (!ReferenceEquals(_player, null))
+                if (Vector3.Distance(transform.position, _target.transform.position) > _attackDistance)
                 {
-                    _player.ApplyDamage(_data.Damage);
-                }
-                else
-                {
-                    return;
+                    _animator.SetFloat(Walk, 1);
+                    State = EnemyState.Follow;
                 }
             }
         }
 
-        private void OnAttackDetectExited()
+        private void FollowToTarget()
         {
-            _animator.SetBool(IsAttack, false);
+            if (ReferenceEquals(_target, null))
+            {
+                State = EnemyState.Idle;
+                return;
+            }
+
+            if (_meshAgent.isOnNavMesh)
+            {
+                var direction = _target.transform.position;
+                _meshAgent.SetDestination(direction);
+
+                var qTo = Quaternion.LookRotation(direction);
+                qTo = Quaternion.Slerp(transform.rotation, qTo, 30.0f * Time.deltaTime);
+                _rigidbody.MoveRotation(qTo);
+            }
+
+            if (Vector3.Distance(transform.position, _target.transform.position) < _attackDistance)
+            {
+                State = EnemyState.Attack;
+            }
+            else
+            {
+                State = EnemyState.Follow;
+            }
+
         }
 
         public void ApplyDamage(float damage)
@@ -94,9 +178,21 @@ namespace Client
 
             if (_data.isDied)
             {
+                State = EnemyState.Die;
                 _animator.SetBool(IsDead, true);
             }
+
             HealthChanged?.Invoke(_data.Health);
         }
+    }
+
+    [Serializable]
+    public class EnemyAudioData
+    {
+        public AudioClip OnAttack;
+        public AudioClip OnDetect;
+        public AudioClip OnUnDetect;
+        public AudioClip OnMove;
+        public AudioClip OnDie;
     }
 }

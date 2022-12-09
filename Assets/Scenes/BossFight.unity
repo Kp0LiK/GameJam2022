@@ -1311,7 +1311,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377162878}
-  m_LocalRotation: {x: 0.026895983, y: 1.1086166e-16, z: -5.0053232e-18, w: 0.99963826}
+  m_LocalRotation: {x: 0.026895983, y: -8.032255e-20, z: 9.667851e-19, w: 0.99963826}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1533,7 +1533,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541782066}
-  m_LocalRotation: {x: 0.06319004, y: -0.0000000042929975, z: 2.718179e-10, w: 0.9980015}
+  m_LocalRotation: {x: 0.06319005, y: 0.0000000042929993, z: -2.7181804e-10, w: 0.9980015}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -25456,6 +25456,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6391557421656349802, guid: 1f8a2cb27eade644abf634879f35e9b6, type: 3}
+      propertyPath: videoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 280640ddbb72ec94e863347d06eb299f, type: 3}
     - target: {fileID: 7459450753998148767, guid: 1f8a2cb27eade644abf634879f35e9b6, type: 3}
       propertyPath: m_Name
       value: BOSS_NEW_MODEL

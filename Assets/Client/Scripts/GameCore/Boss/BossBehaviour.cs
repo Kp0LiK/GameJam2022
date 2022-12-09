@@ -13,7 +13,7 @@ namespace Client
         [SerializeField] private AudioSource _audio;
         [SerializeField] private int _attackDelayInSecond;
         [SerializeField] private float _attackDistance;
-        
+        [SerializeField] private UnityEngine.Video.VideoClip videoClip;
         private PlayerBehaviour _target;
         public EntityData Data => _data;
 
@@ -164,10 +164,15 @@ namespace Client
             {
                 State = EnemyState.Die;
                 _animator.SetBool(IsDead, true);
-                Destroy(gameObject);
+                VideoPlayerController.Instance.PlayClip(videoClip, VideoFinished, Camera.main);
+                
             }
 
             HealthChanged?.Invoke(_data.Health);
+        }
+        void VideoFinished()
+        {
+            Destroy(gameObject);
         }
     }
 }

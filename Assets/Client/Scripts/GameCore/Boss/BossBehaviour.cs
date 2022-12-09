@@ -13,7 +13,6 @@ namespace Client
         [SerializeField] private AudioSource _audio;
         [SerializeField] private int _attackDelayInSecond;
         [SerializeField] private float _attackDistance;
-        [SerializeField] private EnemyAudioData audioData;
         
         private PlayerBehaviour _target;
         public EntityData Data => _data;
@@ -30,6 +29,8 @@ namespace Client
         private NavMeshAgent _meshAgent;
         private Rigidbody _rigidbody;
         private AudioSource _audioSource;
+
+        public Animator Animator => _animator;
 
 
         private static readonly int Walk = Animator.StringToHash("Walk");
@@ -82,7 +83,6 @@ namespace Client
 
         private void OnEntered(PlayerBehaviour playerBehaviour)
         {
-            _audioSource.PlayOneShot(audioData.OnDetect);
             
             _meshAgent.isStopped = false;
             _target = playerBehaviour;
@@ -90,7 +90,6 @@ namespace Client
 
         private void OnDetectExit(PlayerBehaviour playerBehaviour)
         {
-            _audioSource.PlayOneShot(audioData.OnUnDetect);
             
             _meshAgent.isStopped = true;
             _target = null;
@@ -112,7 +111,6 @@ namespace Client
             if (!ReferenceEquals(_target, null))
             {
                 await UniTask.Delay(1500);
-                _audioSource.PlayOneShot(audioData.OnAttack);
                 _target.ApplyDamage(_data.Damage);
 
                 if (Vector3.Distance(transform.position, _target.transform.position) > _attackDistance)
@@ -166,19 +164,10 @@ namespace Client
             {
                 State = EnemyState.Die;
                 _animator.SetBool(IsDead, true);
+                Destroy(gameObject);
             }
 
             HealthChanged?.Invoke(_data.Health);
         }
-    }
-
-    [Serializable]
-    public class EnemyAudioData
-    {
-        public AudioClip OnAttack;
-        public AudioClip OnDetect;
-        public AudioClip OnUnDetect;
-        public AudioClip OnMove;
-        public AudioClip OnDie;
     }
 }
